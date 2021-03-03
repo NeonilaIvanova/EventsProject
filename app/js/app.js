@@ -1,0 +1,1 @@
+const eventsApp = angular.module('eventsApp', []);
