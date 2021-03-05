@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="eventsApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body>
+    <div class="header">
+        <nav class="fixed-top navbar navbar-expand-lg navbar-light bg-light ">
+            <div class="container-fluid col-10">
+                <a class="navbar-brand" href="EventDetails.html">Events</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="CreateNewEvent.html">Create Event</a>
+                    </div>
+                    <div class="navbar-nav">
+                        <a class="nav-link active" aria-current="page" href="/EditProfile.html">Profile </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </div>
+
+    <div class="container-fluid col-10">
+        <div class="page-title">
+            <h1>Profile</h1>
+        </div>
+
+        <div class="profile d-flex flex-wrap">
+            <div class="profile__photocard ">
+                <div class="card" style="width: 15rem;">
+                    <img src="./imgs/img2.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">Profile picture</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <form class="profile__form form  needs-validation " novalidate>
+                <label>
+                    <div class="input-group input-group-sm mb-3 has-validation">
+                        <span class="input-group__field-name input-group-text" id="event-name">User Name</span>
+                        <input ng-model="user.name" type="text" class="form-control" id="user-name"
+                            placeholder="Username" required>
+
+                        <div class="invalid-feedback">
+                            Please choose username.
+                        </div>
+                    </div>
+                </label>
+
+                <label>
+                    <div class="input-group input-group-sm mb-3 has-validation">
+                        <span class="input-group__field-name input-group-text" id="event-name">Password</span>
+                        <input ng-model="user.password" type="password" class="form-control" id="user-password"
+                            placeholder="Password" required>
+
+                        <div class="invalid-feedback">
+                            Please choose password.
+                        </div>
+                    </div>
+                </label>
+
+                <label>
+                    <div class="input-group input-group-sm mb-3 has-validation">
+                        <span class="input-group__field-name input-group-text" id="event-name">Name</span>
+                        <input ng-model="user.name" type="text" class="form-control" id="user-name" placeholder="Name"
+                            required>
+
+                        <div class="invalid-feedback">
+                            Please fill out name field.
+                        </div>
+                    </div>
+                </label>
+
+                <label>
+                    <div class="input-group input-group-sm mb-3 has-validation">
+                        <span class="input-group__field-name input-group-text" id="event-name">Email</span>
+                        <input ng-model="user.email" type="email" class="form-control" id="user-email"
+                            placeholder="Email" required>
+
+                        <div class="invalid-feedback">
+                            Please fill out email field.
+                        </div>
+                    </div>
+                </label>
+
+                <label>
+                    <div class="input-group_textarea input-group input-group-sm mb-3 has-validation">
+                        <span class="input-group__field-name input-group-text" id="event-name">Bio</span>
+                        <textarea ng-model="user.bio" type="textarea" class="form-control" id="user-bio"
+                            placeholder="Bio"></textarea>
+
+                    </div>
+                </label>
+
+                <label>
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group__field-name input-group-text" id="event-image">Image</span>
+                        <input ng-model="user.imgUrl" type="text" class=" form-control" id="user-img" placeholder="URL">
+                    </div>
+                </label>
+
+                <label>
+                    <div class="input-group input-group-sm mb-3">
+                        <input type="file" class="input-group__input form-control" id="user-file">
+                    </div>
+                </label>
+
+                <button type="submit" class="form__button btn btn-success">Save</button>
+                <button type="submit" class="form__button btn btn-outline-primary">Cancel</button>
+            </form>
+        </div>
+
+    </div>
+
+
+
+    <script src="./lib/jquery/jquery.js"></script>
+    <script src="./lib/angular/angular.js"></script>
+    <script src="./lib/underscore/underscore-min.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/controllers/EditProfileController.js"></script>
+</body>
+
+</html>
