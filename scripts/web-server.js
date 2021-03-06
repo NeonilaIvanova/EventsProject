@@ -1,18 +1,21 @@
 // Require express and create an instance of it
-const express = require('express');
-const path = require('path')
+const express = require("express");
+const path = require("path");
+const events = require("./eventController");
 const app = express();
-const rootPath = path.normalize(__dirname + '/../')
+const rootPath = path.normalize(__dirname + "/../");
+const bodyParser = require("body-parser");
 
-app.get('/', function (req, res) {
-  res.send('');
-});
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
+app.use(bodyParser.json());
+app.use(express.static(rootPath + "/app"));
 
-app.get('/welcome', function (req, res) {
-  res.send('');
-});
-
-app.use(express.static(rootPath + '/app'))
+app.get("/data/event/:id", events.get);
+app.post("/data/event/:id", events.save);
 
 // Change the 404 message modifing the middleware
 app.use(function (req, res, next) {
@@ -21,5 +24,5 @@ app.use(function (req, res, next) {
 
 // start the server in the port 3000 !
 app.listen(8000, function () {
-  console.log('Listening on port 8000');
+  console.log("Listening on port 8000");
 });
