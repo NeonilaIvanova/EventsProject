@@ -11,6 +11,11 @@ eventsApp.filter('durations', function () {
                 } else {
                     return `${duration} Hours`
                 }
+                case 1.5:
+                case 2.5:
+                case 3.5:
+
+                    return `${duration} and a Half Hours`
 
                 case 4:
                 case 5:

@@ -17,7 +17,7 @@
 });
  */
 
-eventsApp.factory("eventData", function ($http) {
+/* eventsApp.factory("eventData", function ($http) {
   return {
     getEvent: function () {
       return $http({
@@ -27,3 +27,20 @@ eventsApp.factory("eventData", function ($http) {
     },
   };
 });
+ */
+
+eventsApp.factory('eventData',
+    function ($resource) {
+        const resource = $resource('/data/event/1.json')
+        return {
+            getEvent: function () {
+                return resource.get()
+            },
+
+
+            save: function (event) {
+                return resource.save(event)
+            }
+        }
+
+    })

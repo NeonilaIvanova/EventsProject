@@ -6,14 +6,27 @@ eventsApp.controller(
           console.log(event);
         }); */
 
-        eventData.getEvent().then(
+        /* eventData.getEvent().then(
             function success(response, status, headers, config) {
                 $scope.event = response.data;
             },
             function error(response, status, headers, config) {
                 $log.warn(response, status, headers, config);
             }
-        );
+        ); */
+
+        eventData.getEvent()
+            .$promise
+            .then(function (event) {
+                $scope.event = event;
+                console.log(event);
+            })
+            .catch(function (response) {
+                console.log(response)
+            })
+
+
+
 
         $scope.filterByDefault = "All";
 
@@ -38,5 +51,4 @@ eventsApp.controller(
         $scope.downVoteSession = function (session) {
             session.upVoteCount--;
         };
-    }
-);
+    });

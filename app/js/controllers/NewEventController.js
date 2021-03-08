@@ -1,14 +1,25 @@
-eventsApp.controller('NewEventController', function NewEventController($scope) {
+eventsApp.controller('NewEventController', function NewEventController($scope, eventData) {
+
 
     $scope.saveEvent = function (event, newEventForm) {
         if (newEventForm.$valid) {
-            window.alert(`event ${event.name} saved!`)
+
+            eventData.save(event)
+                .$promise
+                .then(function (response) {
+                    console.log('success', response)
+                })
+                .catch(function (response) {
+                    console.log('failure', response)
+                })
         }
     }
+
 
     $scope.cancelAddingEvent = function () {
         window.location = "/EventDetails.html"
     }
+
 })
 // Fetch all the forms we want to apply custom Bootstrap validation styles to
 var forms = document.querySelectorAll('.needs-validation')
