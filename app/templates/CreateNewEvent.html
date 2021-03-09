@@ -1,0 +1,94 @@
+<div class="container-fluid col-10">
+    <div class="page-title">
+        <h1>New event</h1>
+
+    </div>
+
+    <form name="newEventForm" class="create-event-form col needs-validation" novalidate>
+        <label>
+            <div class="input-group input-group-sm mb-3 has-validation">
+                <span class="input-group__field-name input-group-text" id="event-name">Name</span>
+                <input ng-model="event.name" type="text" class="form-control" id="event-name"
+                    placeholder="Name your event" required>
+
+                <div class="invalid-feedback">
+                    Please choose name.
+                </div>
+            </div>
+        </label>
+
+
+        <label>
+            <div class="input-group input-group-sm mb-3 has-validation">
+                <span class="input-group__field-name input-group-text" id="event-date"> Date</span>
+                <input ng-model="event.date" ng-pattern='/\d\d/\d\d/\d\d\d\d/' type="text" class="form-control"
+                    id="event-date" placeholder="mm/dd/yyyy" required>
+                <div class="invalid-feedback">
+                    Please choose date.
+                </div>
+            </div>
+
+
+        </label>
+
+        <label>
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group__field-name input-group-text" id="event-time">Time</span>
+                <input ng-model="event.time" type="text" class="form-control" id="event-time"
+                    placeholder="Start / end time">
+            </div>
+        </label>
+
+        <label>
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group__field-name input-group-text" id="event-location">Location</span>
+                <input ng-model="event.location.address" type="text" aria-label="First name" class="form-control"
+                    placeholder="Address">
+                <input ng-model="event.location.city" type="text" aria-label="Last name" class="form-control"
+                    placeholder="City">
+                <input ng-model="event.location.province" type="text" aria-label="Last name" class="form-control"
+                    placeholder="Province">
+            </div>
+        </label>
+
+        <label for="">
+            <div class="input-group input-group-sm mb-3">
+                <label class="input-group__field-name input-group-text" for="inputGroupSelect01">Level</label>
+                <select ng-model='event.level' class="form-select" id="inputGroupSelect01">
+                    <option value="Introductory">Introductory</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Advanced">Advanced</option>
+                </select>
+            </div>
+        </label>
+
+        <label>
+            <div class="input-group_textarea input-group input-group-sm mb-3 has-validation">
+                <span class="input-group__field-name input-group-text" id="event-name">About</span>
+                <textarea ng-model="event.abstract" type="textarea" class="form-control" id="user-bio"
+                    placeholder="About event"></textarea>
+
+            </div>
+        </label>
+
+        <label>
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group__field-name input-group-text" id="event-image">Image</span>
+                <input ng-model="event.imgUrl" type="text" class=" form-control" id="event-img" placeholder="URL">
+            </div>
+        </label>
+
+
+
+        <!-- <div>
+                <img ng-src="{{event.imgUrl}}" alt="" style="width: 500px; height: auto">
+
+            </div> -->
+
+        <button ng-disabled="newEventForm.$invalid" ng-click="saveEvent(event, newEventForm)" type="submit"
+            class="form__button btn btn-success">Save</button>
+        <button ng-click="cancelAddingEvent()" type="submit"
+            class="form__button btn btn-outline-primary">Cancel</button>
+
+    </form>
+</div>

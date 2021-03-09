@@ -1,0 +1,93 @@
+<div class="container-fluid col-10">
+    <div class="page-title">
+        <h1>Profile</h1>
+    </div>
+
+    <div class="profile d-flex flex-wrap">
+        <div class="profile__photocard ">
+            <div class="card" style="width: 15rem;">
+                <img ng-src={{getGravatarUrl(user.email)}} class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Profile picture</p>
+                </div>
+            </div>
+        </div>
+
+
+        <form class="profile__form form  needs-validation " novalidate>
+            <label>
+                <div class="input-group input-group-sm mb-3 has-validation">
+                    <span class="input-group__field-name input-group-text" id="event-username">User Name</span>
+                    <input ng-model="user.username" type="text" class="form-control" id="user-username"
+                        placeholder="Username" required>
+
+                    <div class="invalid-feedback">
+                        Please choose username.
+                    </div>
+                </div>
+            </label>
+
+            <label>
+                <div class="input-group input-group-sm mb-3 has-validation">
+                    <span class="input-group__field-name input-group-text" id="event-name">Password</span>
+                    <input ng-model="user.password" type="password" class="form-control" id="user-password"
+                        placeholder="Password" required>
+
+                    <div class="invalid-feedback">
+                        Please choose password.
+                    </div>
+                </div>
+            </label>
+
+            <label>
+                <div class="input-group input-group-sm mb-3 has-validation">
+                    <span class="input-group__field-name input-group-text" id="event-name">Name</span>
+                    <input ng-model="user.name" type="text" class="form-control" id="user-name" placeholder="Name"
+                        required>
+
+                    <div class="invalid-feedback">
+                        Please fill out name field.
+                    </div>
+                </div>
+            </label>
+
+            <label>
+                <div class="input-group input-group-sm mb-3 has-validation">
+                    <span class="input-group__field-name input-group-text" id="event-name">Email</span>
+                    <input ng-model="user.email" type="email" class="form-control" id="user-email" placeholder="Email"
+                        required>
+
+                    <div class="invalid-feedback">
+                        Please fill out email field.
+                    </div>
+                </div>
+            </label>
+
+            <label>
+                <div class="input-group_textarea input-group input-group-sm mb-3 has-validation">
+                    <span class="input-group__field-name input-group-text" id="event-name">Bio</span>
+                    <textarea ng-model="user.bio" type="textarea" class="form-control" id="user-bio"
+                        placeholder="Bio"></textarea>
+
+                </div>
+            </label>
+
+            <label>
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group__field-name input-group-text" id="event-image">Image</span>
+                    <input ng-model="user.imgUrl" type="text" class=" form-control" id="user-img" placeholder="URL">
+                </div>
+            </label>
+
+            <label>
+                <div class="input-group input-group-sm mb-3">
+                    <input type="file" class="input-group__input form-control" id="user-file">
+                </div>
+            </label>
+
+            <button type="submit" class="form__button btn btn-success">Save</button>
+            <button type="submit" class="form__button btn btn-outline-primary">Cancel</button>
+        </form>
+    </div>
+
+</div>

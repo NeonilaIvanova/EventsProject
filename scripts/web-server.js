@@ -14,8 +14,9 @@ app.use(
 app.use(bodyParser.json());
 app.use(express.static(rootPath + "/app"));
 
-app.get("/data/event/:id", events.get);
-app.post("/data/event/:id", events.save);
+app.get('/data/event/:id', events.get);
+app.post('/data/event/:id', events.save);
+app.get('/data/event', events.getAll);
 
 // Change the 404 message modifing the middleware
 app.use(function (req, res, next) {

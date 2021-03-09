@@ -17,7 +17,7 @@ eventsApp.controller('NewEventController', function NewEventController($scope, e
 
 
     $scope.cancelAddingEvent = function () {
-        window.location = "/EventDetails.html"
+        window.location = "#!/EventDetails.html"
     }
 
 })

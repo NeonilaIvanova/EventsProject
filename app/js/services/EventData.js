@@ -30,17 +30,42 @@
  */
 
 eventsApp.factory('eventData',
-    function ($resource) {
-        const resource = $resource('/data/event/1.json')
-        return {
-            getEvent: function () {
-                return resource.get()
-            },
-
-
-            save: function (event) {
-                return resource.save(event)
-            }
+  function ($resource) {
+    const resource = $resource('/data/event/:id', {
+      id: '@id'
+    }, {
+      "getAll": {
+        method: "GET",
+        isArray: true,
+        params: {
+          something: "foo"
         }
-
+      }
     })
+
+    let count = 8;
+
+    return {
+
+      getEvent: function () {
+        return resource.get({
+          id: 1
+        })
+      },
+
+
+      save: function (event) {
+        event.id = count
+          ++count
+        return resource.save(event, count)
+      },
+
+      getAllEvents: function () {
+        return resource.query();
+      }
+
+
+
+    }
+
+  })

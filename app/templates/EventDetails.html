@@ -1,0 +1,96 @@
+<div class="container-fluid col-10">
+    <div class="main-picture text-center pb-5 pt-5 ">
+        <img ng-src="{{event.imgUrl}}" class="img-fluid" alt="{{event.name}}">
+    </div>
+    <div class="event ng-cloak">
+        <div class="event-data">
+            <h1 class="mb-2">{{event.name}}</h1>
+            <div class="d-flex">
+                <div class="event-data__row">
+                    <strong>Date: </strong>{{event.date}}<br>
+                    <strong>Time: </strong>{{event.time}}<br>
+                    <strong>Level: </strong>{{event.level}}
+                </div>
+                <div class="event-data__row">
+                    <address>
+                        <strong>Address:</strong><br>
+                        {{event.location.address}}<br>
+                        {{event.location.city}}, {{event.location.province}}
+                    </address>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="sessions">
+        <div class="sessions__sessions-header d-flex flex-wrap align-content-baseline">
+            <h3 class="sessions-header__title">Sessions:</h3>
+            <!--  <select ng-model="sortorder" class="form-select" aria-label="Default select example" style="width:auto;">
+              <option selected value="">Order by</option>
+              <option value="name">Name</option>
+              <option value="-upVoteCount">Vote</option>
+            </select> -->
+            <div class="dropdowns d-flex">
+                <div class="sessions-header__dopdown dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Order by {{showName}}
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li ng-click="sortData('name', 'name')"><a class="dropdown-item">Name</a></li>
+                        <li ng-click="sortData('-upVoteCount', 'vote')"><a class="dropdown-item">Vote</a></li>
+                    </ul>
+                </div>
+
+                <div class="sessions-header__dopdown dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        {{filterByDefault}}
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li ng-click="filterData('All')" value=""><a class="dropdown-item">All</a></li>
+
+                        <li ng-click="filterData('Introductory')"><a class="dropdown-item">Introductory</a>
+                        </li>
+                        <li ng-click="filterData('Intermediate')"><a class="dropdown-item">Intermediate</a>
+                        </li>
+                        <li ng-click="filterData('Advanced')"><a class="dropdown-item">Advanced</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="session d-flex" ng-repeat="session in event.sessions | orderBy:sortBy | filter:{level: filterBy}">
+            <div
+                class="session__voting-widget badge rounded-pill bg-secondary d-flex flex-column justify-content-around">
+                <div ng-click="upVoteSession(session)" class="voting-widget__arrow">
+                    <img src="./imgs/up-arrow.png" alt="" class=" img-fluid">
+                </div>
+                <h5 class="voting-widget__vote ">{{session.upVoteCount}}</h5>
+                <div ng-click="downVoteSession(session)" class="voting-widget__arrow">
+                    <img src="./imgs/down-arrow.png" alt="" class=" img-fluid">
+                </div>
+            </div>
+
+            <div class="session__session-info card bg-light col">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        {{session.name}}
+                    </h5>
+                    <h6 class="card-subtitle">{{session.creatorName}}</h6>
+                    <div class="card-text mt-3">
+                        <span>Time: {{session.time}}</span><br>
+                        <span ng-hide='session.duration==null'>Duration: {{session.duration | durations}}<br></span>
+                        <span>Level: {{session.level}}</span><br>
+                        <span ng-hide='session.location.address == null'>Location: {{session.location.address}},
+                            {{session.location.city}},
+                            {{session.location.province}}<br></span>
+                        <span>{{session.abstract}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
