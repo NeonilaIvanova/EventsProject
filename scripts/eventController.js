@@ -13,25 +13,20 @@ module.exports.get = function (req, res) {
 module.exports.save = function (req, res) {
     var event = req.body;
 
-    function setEventData(event, count) {
-        event = event[0]
+    function setEventData(event) {
         event.upVoteCount = 0
         event.time = setStartTime(event.time)
-        event.id = count
-        // event.duration = setDuration(event.time)
-
-        // json.sessions.push(event)
-
-        fs.writeFileSync('../app/data/event/' + count + '.json', JSON.stringify(event));
+        console.log(event.id)
+        fs.writeFileSync('../app/data/event/' + event.id + '.json', JSON.stringify(event));
     }
 
+
     function setStartTime(time) {
-        console.log('here')
         const startEndTime = time.split('/')
         return startTime = startEndTime[0]
     }
 
-    setEventData(event, count);
+    setEventData(event);
 
     res.send(event);
 }
@@ -116,12 +111,14 @@ module.exports.getAll = function (req, res) {
     results = results.substr(0, results.length - 1);
     results += "]";
 
-    console.log(results)
+    // console.log(results)
 
     res.setHeader('Content-Type', 'application/json');
     res.send(results);
     res.end();
 };
+
+
 
 
 

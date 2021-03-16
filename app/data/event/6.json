@@ -1,9 +1,1 @@
-{
-					"id": 6,
-                    "name": "Scopes for fun and profit",
-                    "creatorName": "John Doe",
-                    "duration": 3,
-                    "level": "Introductory",
-                    "abstract": "This session will take a closer look at scopes.  Learn what they do, how they do it, and how to get them to do it for you.",
-                    "upVoteCount": 3
-                }
+{"name":"test","date":"11/12/2000","time":"10:00","location":{"address":"b","city":"bb","province":"b"},"level":"Introductory","abstract":"jkhbvbjk","imgUrl":"https://res.cloudinary.com/dwzmsvp7f/image/fetch/q_75,f_auto,w_800/https%3A%2F%2Fmedia.insider.in%2Fimage%2Fupload%2Fc_crop%2Cg_custom%2Fv1519627962%2Fvltlogy23k1iid9pjffx.jpg","id":6,"upVoteCount":0}

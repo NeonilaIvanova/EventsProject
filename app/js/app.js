@@ -14,9 +14,13 @@ const eventsApp = angular.module('eventsApp', ['ngResource', 'ngRoute'])
             controller: 'EditProfileController'
         });
 
-        $routeProvider.when('/event/:eventId', {
-            template: 'templates/EventDetails.html',
+        $routeProvider.when('/event/:id', {
+            templateUrl: 'templates/EventDetails.html',
             controller: 'EventController'
+        });
+
+        $routeProvider.otherwise({
+            redirectTo: '/events'
         })
 
     });

@@ -1,18 +1,19 @@
-<div class="container-fluid col-10">
-    <div class="main-picture text-center pb-5 pt-5 ">
-        <img ng-src="{{event.imgUrl}}" class="img-fluid" alt="{{event.name}}">
+<div class="container-fluid col-10 ">
+    <div class=" main-picture text-center pb-5 pt-5 ">
+        <img ng-hide='event.imgUrl==null' ng-src=" {{event.imgUrl}}" class="img-fluid" alt="{{event.name}}">
     </div>
     <div class="event ng-cloak">
         <div class="event-data">
             <h1 class="mb-2">{{event.name}}</h1>
             <div class="d-flex">
                 <div class="event-data__row">
-                    <strong>Date: </strong>{{event.date}}<br>
-                    <strong>Time: </strong>{{event.time}}<br>
-                    <strong>Level: </strong>{{event.level}}
+                    <span ng-hide='event.date==null'><strong>Date: </strong>{{event.date}}<br></span>
+                    <span ng-hide='event.time==null'><strong>Time: </strong>{{event.time}}<br></span>
+                    <span ng-hide='event.level==null'><strong>Level: </strong>{{event.level}}</span>
                 </div>
                 <div class="event-data__row">
-                    <address>
+                    <address ng-hide='event.location==null'>
+
                         <strong>Address:</strong><br>
                         {{event.location.address}}<br>
                         {{event.location.city}}, {{event.location.province}}
@@ -81,7 +82,7 @@
                     </h5>
                     <h6 class="card-subtitle">{{session.creatorName}}</h6>
                     <div class="card-text mt-3">
-                        <span>Time: {{session.time}}</span><br>
+                        <span ng-hide='session.time==null'>Time: {{session.time}}<br></span>
                         <span ng-hide='session.duration==null'>Duration: {{session.duration | durations}}<br></span>
                         <span>Level: {{session.level}}</span><br>
                         <span ng-hide='session.location.address == null'>Location: {{session.location.address}},

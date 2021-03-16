@@ -1,6 +1,6 @@
 eventsApp.controller(
     "EventController",
-    function eventController($scope, eventData, $log) {
+    function eventController($scope, eventData, $routeParams, $route) {
         /* eventData.getEvent(function (event) {
           $scope.event = event;
           console.log(event);
@@ -15,15 +15,9 @@ eventsApp.controller(
             }
         ); */
 
-        eventData.getEvent()
-            .$promise
-            .then(function (event) {
-                $scope.event = event;
-                console.log(event);
-            })
-            .catch(function (response) {
-                console.log(response)
-            })
+
+        $scope.event = eventData.getEvent($routeParams.id);
+
 
 
 

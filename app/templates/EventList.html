@@ -1,12 +1,10 @@
 <div class="event-list col-10 container">
     <div class="row d-flex justify-content-between">
-        <div class="card border-light mb-3" style="max-width: 20rem;"
+        <a ng-href="#!/event/{{event.id}}" class="card border-light mb-3 custom_thumbnail"
             ng-repeat="event in events | orderBy:sortBy | filter:{level: filterBy}">
             <div class="card-body">
-                <a href="!#/event/{{event.id}}">
-                    <h5 class="card-title mb-3">{{event.name}}</h5>
-                </a>
-                <h6 class="card-subtitle mb-4">{{event.creator}}</h3>
+                <h5 class="card-title mb-3">{{event.name}}</h5>
+                <h6 class="card-subtitle mb-4">{{event.creatorName}}</h3>
                     <span ng-hide='event.time==null'>Time: {{event.time}}<br></span>
                     <span ng-hide='event.duration==null'>Duration: {{event.duration | durations}}<br></span>
                     <span ng-hide='event.level==null'>Level: {{event.level}}<br></span>
@@ -15,6 +13,7 @@
                         {{event.location.province}}<br></span>
                     <span>{{event.abstract}}</span>
             </div>
-        </div>
+        </a>
+
     </div>
 </div>

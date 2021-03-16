@@ -43,21 +43,22 @@ eventsApp.factory('eventData',
       }
     })
 
-    let count = 8;
+    let count = 5;
 
     return {
 
-      getEvent: function () {
+      getEvent: function (eventId) {
         return resource.get({
-          id: 1
-        })
+          id: eventId
+        });
       },
 
 
       save: function (event) {
+        console.log(event)
         event.id = count
           ++count
-        return resource.save(event, count)
+        return resource.save(event)
       },
 
       getAllEvents: function () {

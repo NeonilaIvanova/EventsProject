@@ -3,9 +3,9 @@ h3 {
   margin: 0;
 }
 
-.header {
+/* .header {
   margin-bottom: 60px;
-}
+} */
 
 .main-picture {
   margin-top: 100px;
@@ -68,7 +68,7 @@ h3 {
 
 /* CreateNewEvent */
 
-.page-title {
+.new-pevent-page {
   margin-top: 100px;
 }
 
@@ -140,4 +140,17 @@ input.ng-valid-required.ng-valid.ng-valid-pattern:focus {
 
 .event-list {
   margin-top: 100px;
+}
+
+.custom_thumbnail {
+  background:
+    #f8f9fa;
+  max-width: 20rem;
+  text-decoration: none;
+  color: #212529;
+}
+
+.custom_thumbnail:hover {
+  color: #212529;
+  background: #e9ecef;
 }

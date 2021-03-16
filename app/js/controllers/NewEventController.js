@@ -1,7 +1,49 @@
-eventsApp.controller('NewEventController', function NewEventController($scope, eventData) {
+eventsApp.controller('NewEventController',
+    function NewEventController($scope, eventData) {
+
+        $scope.event = {};
+
+        $scope.saveEvent = function (event, newEventForm) {
+            if (newEventForm.$valid) {
+                eventData.save(event)
+                    .$promise
+                    .then(function (response) {
+                        console.log('success', response)
+                    })
+                    .catch(function (response) {
+                        console.log('failure', response)
+                    });
+            }
+        };
+
+        $scope.cancelEvent = function () {
+            window.location = '/EventDetails.html';
+        }
+
+    }
+);
+
+
+/* eventsApp.controller('NewEventController', function NewEventController($scope, eventData) {
 
 
     $scope.saveEvent = function (event, newEventForm) {
+$scope.event = {};
+
+$scope.saveEvent = function (event, newEventForm) {
+    if (newEventForm.$valid) {
+        eventData.save(event)
+            .$promise
+            .then(function (response) {
+                console.log('success', response)
+            })
+            .catch(function (response) {
+                console.log('failure', response)
+            });
+    }
+};
+
+
         if (newEventForm.$valid) {
 
             eventData.save(event)
@@ -20,7 +62,7 @@ eventsApp.controller('NewEventController', function NewEventController($scope, e
         window.location = "#!/EventDetails.html"
     }
 
-})
+}) */
 // Fetch all the forms we want to apply custom Bootstrap validation styles to
 var forms = document.querySelectorAll('.needs-validation')
 
