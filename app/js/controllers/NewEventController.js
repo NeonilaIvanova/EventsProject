@@ -1,4 +1,4 @@
-eventsApp.controller('NewEventController',
+angular.module('eventsApp').controller('NewEventController',
     function NewEventController($scope, eventData) {
 
         $scope.event = {};
@@ -17,7 +17,7 @@ eventsApp.controller('NewEventController',
         };
 
         $scope.cancelEvent = function () {
-            window.location = '/EventDetails.html';
+            window.location = 'events';
         }
 
     }

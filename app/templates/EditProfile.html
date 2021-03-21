@@ -1,9 +1,10 @@
-<div class="container-fluid col-10">
+<div class="container-fluid profile col-10">
     <div class="page-title">
         <h1>Profile</h1>
     </div>
 
-    <div class="profile d-flex flex-wrap">
+    <div class="profile-form d-flex flex-wrap">
+
         <div class="profile__photocard ">
             <div class="card" style="width: 15rem;">
                 <img ng-src={{getGravatarUrl(user.email)}} class="card-img-top" alt="...">
@@ -86,7 +87,7 @@
             </label>
 
             <button type="submit" class="form__button btn btn-success">Save</button>
-            <button type="submit" class="form__button btn btn-outline-primary">Cancel</button>
+            <button ng-click="cancelEvent()" type="submit" class="form__button btn btn-outline-primary">Cancel</button>
         </form>
     </div>
 

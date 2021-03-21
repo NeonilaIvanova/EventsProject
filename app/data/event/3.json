@@ -1,9 +1,7 @@
-{
-					"id": 3,
-                    "name": "Scopes for fun and profit",
-                    "creatorName": "John Doe",
-                    "duration": 3,
-                    "level": "Introductory",
-                    "abstract": "This session will take a closer look at scopes.  Learn what they do, how they do it, and how to get them to do it for you.",
-                    "upVoteCount": 3
-                }
+{"id":3,
+	"name":"Code Retreat","date":"03/16/2013",
+	"time":"8:00am - 4:30pm",
+	"location":{"address":"42 Wallaby Way",
+	"city":"Sydney",
+"province":"AU"},
+"imgUrl":"https://mylifeproject.org/wp-content/uploads/2020/07/new_statesman_events.jpg"}

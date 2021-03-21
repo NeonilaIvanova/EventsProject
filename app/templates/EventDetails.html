@@ -64,7 +64,7 @@
         </div>
 
         <div class="session d-flex" ng-repeat="session in event.sessions | orderBy:sortBy | filter:{level: filterBy}">
-            <div
+            <!-- <div
                 class="session__voting-widget badge rounded-pill bg-secondary d-flex flex-column justify-content-around">
                 <div ng-click="upVoteSession(session)" class="voting-widget__arrow">
                     <img src="./imgs/up-arrow.png" alt="" class=" img-fluid">
@@ -73,8 +73,9 @@
                 <div ng-click="downVoteSession(session)" class="voting-widget__arrow">
                     <img src="./imgs/down-arrow.png" alt="" class=" img-fluid">
                 </div>
-            </div>
-
+            </div> -->
+            <vote upvote="upVoteSession(session)" downvote="downVoteSession(session)" count="session.upVoteCount">
+            </vote>
             <div class="session__session-info card bg-light col">
                 <div class="card-body">
                     <h5 class="card-title">
@@ -82,13 +83,15 @@
                     </h5>
                     <h6 class="card-subtitle">{{session.creatorName}}</h6>
                     <div class="card-text mt-3">
+                        <span ng-hide='session.track==null'>Track: {{session.track}}<br></span>
                         <span ng-hide='session.time==null'>Time: {{session.time}}<br></span>
                         <span ng-hide='session.duration==null'>Duration: {{session.duration | durations}}<br></span>
                         <span>Level: {{session.level}}</span><br>
                         <span ng-hide='session.location.address == null'>Location: {{session.location.address}},
                             {{session.location.city}},
                             {{session.location.province}}<br></span>
-                        <span>{{session.abstract}}</span>
+                        <span ng-hide='session.abstract == null'>{{session.abstract}}<br></span>
+
                     </div>
                 </div>
             </div>

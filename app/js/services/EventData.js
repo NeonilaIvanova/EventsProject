@@ -29,7 +29,7 @@
 });
  */
 
-eventsApp.factory('eventData',
+angular.module('eventsApp').factory('eventData',
   function ($resource) {
     const resource = $resource('/data/event/:id', {
       id: '@id'
@@ -43,7 +43,7 @@ eventsApp.factory('eventData',
       }
     })
 
-    let count = 5;
+    let count = 8;
 
     return {
 

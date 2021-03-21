@@ -125,8 +125,12 @@ input.ng-valid-required.ng-valid.ng-valid-pattern:focus {
 } */
 
 .profile {
-  margin-top: 30px;
+  margin-top: 100px;
   margin-bottom: 40px;
+}
+
+.profile-form {
+  margin-top: 30px;
 }
 
 .profile__photocard {

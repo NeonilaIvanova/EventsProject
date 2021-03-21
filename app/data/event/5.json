@@ -1,1 +1,11 @@
-{"name":"test","date":"11/12/2000","time":"10:00","location":{"address":"b","city":"bb","province":"b"},"level":"Introductory","abstract":"nmjk","imgUrl":"https://res.cloudinary.com/dwzmsvp7f/image/fetch/q_75,f_auto,w_800/https%3A%2F%2Fmedia.insider.in%2Fimage%2Fupload%2Fc_crop%2Cg_custom%2Fv1519627962%2Fvltlogy23k1iid9pjffx.jpg","id":5,"upVoteCount":0}
+{
+					"id": 5,
+                    "name": "Directives Masterclass",
+                    "creatorName": "Bob Smith",
+                    "duration": 1,
+                    "level": "Advanced",
+                    "abstract": "In this session you will learn the ins and outs of directives!",
+                    "upVoteCount": 0
+                }
+
+

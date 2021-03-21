@@ -1,6 +1,6 @@
-eventsApp.controller(
+angular.module('eventsApp').controller(
     "EventController",
-    function eventController($scope, eventData, $routeParams, $route) {
+    function eventController($scope, eventData, $stateParams) {
         /* eventData.getEvent(function (event) {
           $scope.event = event;
           console.log(event);
@@ -15,8 +15,7 @@ eventsApp.controller(
             }
         ); */
 
-
-        $scope.event = eventData.getEvent($routeParams.id);
+        $scope.event = eventData.getEvent($stateParams.eventId);
 
 
 

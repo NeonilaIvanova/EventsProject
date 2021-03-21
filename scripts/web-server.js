@@ -17,7 +17,9 @@ app.use(express.static(rootPath + "/app"));
 app.get('/data/event/:id', events.get);
 app.post('/data/event/:id', events.save);
 app.get('/data/event', events.getAll);
-
+app.get('*', function (req, res) {
+  res.sendFile(rootPath + '/app/index.html');
+})
 // Change the 404 message modifing the middleware
 app.use(function (req, res, next) {
   res.status(404).send("Sorry, that route doesn't exist. Have a nice day :)");

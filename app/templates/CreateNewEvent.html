@@ -17,8 +17,8 @@
         <label>
             <div class="input-group input-group-sm mb-3 has-validation">
                 <span class="input-group__field-name input-group-text" id="event-date"> Date</span>
-                <input ng-model="event.date" ng-pattern='/\d\d/\d\d/\d\d\d\d/' type="text" class="form-control"
-                    id="event-date" placeholder="mm/dd/yyyy" required>
+                <input ng-model="event.date" date-keys ng-pattern='/\d\d/\d\d/\d\d\d\d/' type="text"
+                    class="form-control" id="event-date" placeholder="mm/dd/yyyy" required>
                 <div class="invalid-feedback">
                     Please choose date.
                 </div>
@@ -83,8 +83,7 @@
 
         <button ng-disabled="newEventForm.$invalid" ng-click="saveEvent(event, newEventForm)" type="submit"
             class="form__button btn btn-success">Save</button>
-        <button ng-click="cancelAddingEvent()" type="submit"
-            class="form__button btn btn-outline-primary">Cancel</button>
+        <button ng-click="cancelEvent()" type="submit" class="form__button btn btn-outline-primary">Cancel</button>
 
     </form>
 </div>
