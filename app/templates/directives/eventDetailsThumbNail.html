@@ -1,0 +1,12 @@
+<collapsible title='{{session.name}}'>
+    <h6 class="card-subtitle">{{session.creatorName}}</h6>
+    <div class="card-text mt-3">
+        <span ng-hide='session.track==null'>Track: {{session.track}}<br></span>
+        <span ng-hide='session.time==null'>Time: {{session.time}}<br></span>
+        <span ng-hide='session.duration==null'>Duration: {{session.duration | durations}}<br></span>
+        <span>Level: {{session.level}}</span><br>
+        <span ng-hide='session.location.address == null'>Location: {{session.location.address}},
+            {{session.location.city}},
+            {{session.location.province}}<br></span>
+        <span ng-hide='session.abstract == null'>{{session.abstract}}<br></span>
+</collapsible>

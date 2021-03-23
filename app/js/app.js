@@ -43,7 +43,7 @@ const eventsApp = angular.module('eventsApp', ['ngResource', 'ui.router', "oc.la
             resolve: {
                 loadAsset: ['$ocLazyLoad', function ($ocLazyLoad) {
                     return $ocLazyLoad.load([
-                        './js/services/EventData.js', './js/components/eventThumb.js', './js/filters.js',
+                        './js/services/EventData.js', './js/components/eventThumbnail.js', './js/filters.js',
                         './js/controllers/EventListController.js'
                     ])
                 }]
@@ -59,7 +59,7 @@ const eventsApp = angular.module('eventsApp', ['ngResource', 'ui.router', "oc.la
                 loadAsset: ['$ocLazyLoad', function ($ocLazyLoad) {
                     return $ocLazyLoad.load([
                         './js/services/EventData.js', './js/filters.js', './js/directives/vote.js',
-                        './js/controllers/EventController.js'
+                        './js/controllers/EventController.js', './js/components/eventDetailsThumbnails.js', './js/directives/collapsible.js'
                     ])
                 }]
             }

@@ -1,9 +1,9 @@
 <div class="event-list col-10 container">
     <div class="row d-flex justify-content-between">
-        <a ui-sref="event({eventId:$ctrl.event.id})" class="card border-light mb-3 custom_thumbnail"
-            ng-repeat="event in $ctrl.events | orderBy:sortBy | filter:{level: filterBy}" event="event">
+        <a ui-sref="event({eventId:event.id})" class="card border-light mb-3 custom_thumbnail"
+            ng-repeat="event in events | orderBy:sortBy | filter:{level: filterBy}" event="event">
 
-            <event-thumb></event-thumb>
+            <event-thumbnail event="event"></event-thumbnail>
         </a>
     </div>
 </div>

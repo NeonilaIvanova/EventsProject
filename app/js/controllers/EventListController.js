@@ -1,9 +1,13 @@
 /* angular.module('eventsApp').controller('EventListController', function EventListController($scope, eventData) {
-    $scope.events = eventData.getAllEvents()
+    $scope.events = [];
+    eventData.getAllEvents().$promise.then(result => {
+        $scope.events = result
+    })
 }) */
 
 angular.module('eventsApp').controller('EventListController', function EventListController($scope, eventData) {
-    let ctrl = this;
-    ctrl.events = eventData.getAllEvents()
-    console.log(ctrl.events)
+    $scope.events = [];
+    eventData.getAllEvents().$promise.then(result => {
+        $scope.events = result
+    })
 })

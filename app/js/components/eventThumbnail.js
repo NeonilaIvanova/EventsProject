@@ -1,10 +1,10 @@
-angular.module('eventsApp').component('eventThumb', {
+angular.module('eventsApp').component('eventThumbnail', {
     templateUrl: '/templates/directives/eventThumbnail.html',
     bindings: {
         event: '='
-    },
-    controller: 'EventListController'
+    }
 });
+
 
 
 /* '<div class="card-body">' +

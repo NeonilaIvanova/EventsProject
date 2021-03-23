@@ -34,12 +34,10 @@ angular.module('eventsApp').factory('eventData',
     const resource = $resource('/data/event/:id', {
       id: '@id'
     }, {
-      "getAll": {
+      "getAllEvents": {
         method: "GET",
         isArray: true,
-        params: {
-          something: "foo"
-        }
+
       }
     })
 
